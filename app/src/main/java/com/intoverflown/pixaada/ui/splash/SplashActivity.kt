@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
-import com.intoverflown.pixaada.MainActivity
+import com.intoverflown.pixaada.ui.dashboard.MainActivity
 import com.intoverflown.pixaada.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
