@@ -11,13 +11,13 @@ import retrofit2.Response
 
 class ViewModel(private var repository: Repository) : ViewModel() {
 
-    val myResponse : MutableLiveData<Response<DataImage>> = MutableLiveData()
+    val myHitResponse : MutableLiveData<Response<DataImage>> = MutableLiveData()
 
     fun fetchHitsData() {
         // use coroutines concurrency design pattern which is asynchronously to manage long-running tasks
         viewModelScope.launch {
             val response = repository.fetchHitsData()
-            myResponse.value = response
+            myHitResponse.value = response
             Log.d("resViewModel", response.toString())
         }
     }
