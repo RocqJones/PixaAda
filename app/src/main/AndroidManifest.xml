@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.dashboard.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false">
         </activity>
     </application>
