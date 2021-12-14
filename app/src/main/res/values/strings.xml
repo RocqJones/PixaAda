@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pixa Ada</string>
+    <string name="img">img</string>
+    <string name="hi_there">Hi there!</string>
+    <string name="welcome_to_pixa_ada_where_you_can_get_stunning_free_popular_images">Welcome to Pixa Ada where you can get stunning free popular images</string>
+    <string name="popular_images"><b>Popular Images:</b></string>
+    <string name="popular_list">Wallpaper, cat , nature, winter, snow, background, christmas tree, food, sky, dog, money, coronavirus, christmas wallpaper</string>
+    <string name="search_images">Search images...</string>
 </resources>
