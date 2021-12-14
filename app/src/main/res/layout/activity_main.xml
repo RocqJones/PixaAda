@@ -119,6 +119,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginUserId" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imgRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -129,6 +130,6 @@
         app:layout_constraintTop_toBottomOf="@+id/totalSearchResults"
         app:spanCount="2"
         tools:itemCount="16"
-        tools:listitem="@layout/grid_view_item" />
+        tools:listitem="@layout/item_grid_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
