@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_bg">#FDFBFB</color>
     <color name="second_bg">#232121</color>
+    <color name="success_green">#428302</color>
 </resources>
