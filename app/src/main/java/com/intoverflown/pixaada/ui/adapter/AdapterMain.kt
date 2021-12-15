@@ -1,18 +1,26 @@
+package com.intoverflown.pixaada.ui.adapter
+
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.intoverflown.pixaada.data.Hit
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.intoverflown.pixaada.R
+import com.intoverflown.pixaada.data.DataList
 import com.intoverflown.pixaada.databinding.ItemGridViewBinding
+import com.intoverflown.pixaada.ui.detailsview.DetailsActivity
 
 
-class AdapterMain(rvData: List<Hit>, mContext: Context) :
+class AdapterMain(var rvData: List<DataList>, context: Context) :
     RecyclerView.Adapter<AdapterMain.RVHolder>() {
-    var rvData: List<Hit> = rvData
     var binding: ItemGridViewBinding? = null
-    var mContext: Context? = null
+    var mContext: Context? = context
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RVHolder {
         binding = ItemGridViewBinding.inflate(LayoutInflater.from(viewGroup.context))
         val view: View = binding!!.root
@@ -20,22 +28,42 @@ class AdapterMain(rvData: List<Hit>, mContext: Context) :
     }
 
     override fun onBindViewHolder(holder: RVHolder, i: Int) {
-//        holder.cusName.setText(rvData[i].getCustomerName())
-        //        String dt = rvData.get(i).getStatus();
-//        holder.trxDate.setText("");
+        /**
+         * I'm using Glide library to load an image by URL into an [ImageView]
+         * override method reduces the pixels of an image to fit the screen
+         * Then placeholder anim and error img sample in cases where the img link is broken
+         */
+        rvData[i].previewURL?.let { Log.d("resAdapterD", it) }
 
-//        val batchId: String = rvData[i].getBatchID()
-//        val customerName: String = rvData[i].getCustomerName()
-//        val balance: String = rvData[i].getBalance()
-//        val status: String = rvData[i].getStatus()
-//        holder.lHolder.setOnClickListener { view: View? ->
-//            val j = Intent(mContext, TrxCsCrDetailActivity::class.java)
-//            j.putExtra("batchID", batchId)
-//            j.putExtra("cusName", customerName)
-//            j.putExtra("balance", balance)
-//            j.putExtra("pStatus", status)
-//            mContext.startActivity(j)
-//        }
+        if (rvData[i].previewURL != null) {
+            val url = rvData[i].previewURL
+            Glide.with(holder.previewImg.context).load(url).override(180, 150)
+                .apply(RequestOptions()
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_broken_image))
+                .into(holder.previewImg)
+        } else {
+            Glide.with(holder.previewImg.context).load(R.drawable.ic_broken_image)
+                .override(180, 150)
+                .apply(RequestOptions()
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_broken_image))
+                .into(holder.previewImg)
+        }
+
+        /**
+         * intent to Details activity with more user details
+         */
+        val largeImageURL: String? = rvData[i].largeImageURL
+        val user: String? = rvData[i].user
+        val views: String? = rvData[i].views
+        holder.previewImg.setOnClickListener {
+            val intent = Intent(mContext, DetailsActivity::class.java)
+            intent.putExtra("largeImageURL", largeImageURL)
+            intent.putExtra("user", user)
+            intent.putExtra("views", views)
+            mContext!!.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
