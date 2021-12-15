@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bg"
+        android:columnCount="2"
+        android:rowCount="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:contentDescription="@string/img"
+            android:src="@drawable/loading_animation"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/img" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
