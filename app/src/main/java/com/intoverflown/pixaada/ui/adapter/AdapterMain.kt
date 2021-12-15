@@ -57,11 +57,13 @@ class AdapterMain(var rvData: List<DataList>, context: Context) :
         val largeImageURL: String? = rvData[i].largeImageURL
         val user: String? = rvData[i].user
         val views: String? = rvData[i].views
+        val tags: String? = rvData[i].tags
         holder.previewImg.setOnClickListener {
             val intent = Intent(mContext, DetailsActivity::class.java)
             intent.putExtra("largeImageURL", largeImageURL)
             intent.putExtra("user", user)
             intent.putExtra("views", views)
+            intent.putExtra("tags", tags)
             mContext!!.startActivity(intent)
         }
     }
