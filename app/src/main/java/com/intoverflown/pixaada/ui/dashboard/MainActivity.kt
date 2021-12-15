@@ -2,6 +2,8 @@ package com.intoverflown.pixaada.ui.dashboard
 
 import android.graphics.Paint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.intoverflown.pixaada.R
 import com.intoverflown.pixaada.data.DataList
 import com.intoverflown.pixaada.data.Hit
+import com.intoverflown.pixaada.data.SearchData
 import com.intoverflown.pixaada.databinding.ActivityMainBinding
+import com.intoverflown.pixaada.network.ApiInterface
 import com.intoverflown.pixaada.repository.Repository
 import com.intoverflown.pixaada.ui.adapter.AdapterMain
 import com.intoverflown.pixaada.ui.viewmodel.ViewModel
@@ -33,6 +37,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         binding!!.secTwoTxt.text = getString(R.string.popular_images) + " " + getString(R.string.popular_list)
+
+        /**
+         * Search bar
+         * Listen for data change
+         */
+        val searchKey : SearchData = SearchData()
+        binding!!.searchString.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (list.isNotEmpty()) {
+                    list.clear()
+                }
+                var searchString = binding!!.searchString.text.toString().trim()
+                if (searchString.isEmpty()) {
+                    searchString = "dogs"
+                    searchKey.searchStr = searchString
+                } else {
+                    searchString
+                    searchKey.searchStr = searchString
+                }
+            }
+            override fun afterTextChanged(s: Editable) {}
+        })
 
         /**
          * init recyclerView
