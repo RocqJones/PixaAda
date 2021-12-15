@@ -1,6 +1,5 @@
 package com.intoverflown.pixaada.network
 
-import com.intoverflown.pixaada.utils.Constants.Companion.API_key
 import com.intoverflown.pixaada.utils.Constants.Companion.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
