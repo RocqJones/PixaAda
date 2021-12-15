@@ -78,7 +78,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/loginUserId"
+        android:id="@+id/searchString"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -116,7 +116,7 @@
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginUserId" />
+        app:layout_constraintTop_toBottomOf="@+id/searchString" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imgRecycler"
