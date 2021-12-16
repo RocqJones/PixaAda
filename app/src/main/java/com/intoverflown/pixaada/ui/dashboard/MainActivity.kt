@@ -9,13 +9,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.intoverflown.pixaada.R
 import com.intoverflown.pixaada.data.DataList
 import com.intoverflown.pixaada.data.Hit
-import com.intoverflown.pixaada.data.SearchData
 import com.intoverflown.pixaada.databinding.ActivityMainBinding
-import com.intoverflown.pixaada.network.ApiInterface
 import com.intoverflown.pixaada.repository.Repository
 import com.intoverflown.pixaada.ui.adapter.AdapterMain
 import com.intoverflown.pixaada.ui.viewmodel.ViewModel
@@ -39,29 +36,6 @@ class MainActivity : AppCompatActivity() {
         binding!!.secTwoTxt.text = getString(R.string.popular_images) + " " + getString(R.string.popular_list)
 
         /**
-         * Search bar
-         * Listen for data change
-         */
-        val searchKey : SearchData = SearchData()
-        binding!!.searchString.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (list.isNotEmpty()) {
-                    list.clear()
-                }
-                var searchString = binding!!.searchString.text.toString().trim()
-                if (searchString.isEmpty()) {
-                    searchString = "dogs"
-                    searchKey.searchStr = searchString
-                } else {
-                    searchString
-                    searchKey.searchStr = searchString
-                }
-            }
-            override fun afterTextChanged(s: Editable) {}
-        })
-
-        /**
          * init recyclerView
          */
         val gridLayoutManager = GridLayoutManager(this, 2)
@@ -75,11 +49,26 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[ViewModel::class.java]
 
-        displayData()
+        displayData("dogs")
+        /**
+         * initialize search bar with [TextWatcher] on data change with Text Changed Listener
+         */
+        binding!!.searchString.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                val searchString = binding!!.searchString.text.toString().trim()
+                if (list.isNotEmpty()) {
+                    list.clear()
+                }
+                Log.d("resSearchStr", searchString)
+                displayData(searchString)
+            }
+            override fun afterTextChanged(s: Editable) {}
+        })
     }
 
-    private fun displayData() {
-        viewModel.fetchHitsData()
+    private fun displayData(searchString: String) {
+        viewModel.fetchHitsData(searchString)
         viewModel.myHitResponse.observe(this, { response ->
             if (response.isSuccessful) {
                 response.body()?.toString()?.let { Log.d("response", it) }
