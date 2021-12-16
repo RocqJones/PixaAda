@@ -20,11 +20,11 @@
 [Data Binding](https://developer.android.com/topic/libraries/data-binding) - I used this to bind UI components in our layouts to data sources in our app using a declarative format rather than programmatically.
 
 ## Screenshots.
-<a href="url"><img src="screenshots/1.png" height="400" width="200" ></a>
-<a href="url"><img src="screenshots/2.png" height="400" width="200" ></a>
-<a href="url"><img src="screenshots/3.png" height="400" width="200" ></a>
-<a href="url"><img src="screenshots/4.png" height="400" width="200" ></a>
-<a href="url"><img src="screenshots/5.png" height="400" width="200" ></a>
+<a href="url"><img src="screenshots/1.png" height="380" width="220" ></a>
+<a href="url"><img src="screenshots/2.png" height="380" width="220" ></a>
+<a href="url"><img src="screenshots/3.png" height="380" width="220" ></a>
+<a href="url"><img src="screenshots/4.png" height="380" width="220" ></a>
+<a href="url"><img src="screenshots/5.png" height="380" width="220" ></a>
 
 ## License.
 ## [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
