@@ -6,7 +6,9 @@ import com.intoverflown.pixaada.repository.Repository
 
 class ViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {
 
-    // ViewModel depends on ViewModelProviders utility because we can not create ViewModel on our own
+    /**
+     * ViewModel depends on ViewModelProviders utility because we can not create ViewModel on our own
+     */
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return ViewModel(repository) as T
     }
