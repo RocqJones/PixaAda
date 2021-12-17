@@ -5,7 +5,7 @@
 2. Image Gallery.
 
 ## Download apk
-[APK](https://play.google.com/store/apps/details?id=com.intoverflown.sasakazi)
+[APK](https://github.com/RocqJones/PixaAda/tree/devbranch/app/build/outputs/apk/debug)
 
 ## Architecture.
 * **ViewModel:** *Stores UI-related data that isn't destroyed on app rotations*.
