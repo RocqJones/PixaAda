@@ -1,7 +1,7 @@
 # Pixa Ada Android Application.
 
 ## Features.
-1. Search
+1. Search photos.
 2. Image Gallery.
 
 ## Download apk
