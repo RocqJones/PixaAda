@@ -124,30 +124,6 @@ class MainActivity : AppCompatActivity() {
                     binding!!.loader.visibility = View.VISIBLE
                 }
 
-//                dataHits = response.body()?.hits.toString())
-//                val jsonArray: String = jj
-//                for (i in 0 until jsonArray.length()) {
-//                    val jsonObject = jsonArray[i] as JSONObject
-//                    Log.d("resArr", jsonObject.optString("largeImageURL"))
-//                    val dHits = Hit(
-//                        jsonObject.optString("collections"),
-//                        jsonObject.optString("comments"),
-//                        jsonObject.optString("id"),
-//                        jsonObject.optString("largeImageURL"),
-//                        jsonObject.optString("likes"),
-//                        jsonObject.optString("previewHeight"),
-//                        jsonObject.optString("previewURL"),
-//                        jsonObject.optString("tags"),
-//                        jsonObject.optString("user"),
-//                        jsonObject.optString("userImageURL"),
-//                        jsonObject.optString("user_id"),
-//                        jsonObject.optString("views")
-//                    )
-////                    dataHits.add(dHits)
-//                }
-//                adapterMain = dataHits?.let { com.intoverflown.pixaada.ui.adapter.AdapterMain(it, this) }
-//                binding!!.imgRecycler.adapter = adapterMain
-
                 binding!!.totalSearchResults.text = "Found +" + response.body()?.total.toString() + " results"
                 binding!!.totalSearchResults.paintFlags = binding!!.totalSearchResults.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             } else {
