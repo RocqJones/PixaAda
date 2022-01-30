@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun displayData(searchString: String) {
         viewModel.fetchHitsData(searchString)
-        viewModel.myHitResponse.observe(this, { response ->
+        viewModel.myHitResponse.observe(this) { response ->
             if (response.isSuccessful) {
                 response.body()?.toString()?.let { Log.d("response", it) }
                 Log.d("responseTotalRes", response.body()?.total.toString())
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
                     val views = i.views
                     Log.d("resM", "$comment : $previewURL")
 
-                    val dList : DataList = DataList()
+                    val dList: DataList = DataList()
                     dList.collections = collections
                     dList.comments = comment
                     dList.id = id
@@ -124,12 +124,14 @@ class MainActivity : AppCompatActivity() {
                     binding!!.loader.visibility = View.VISIBLE
                 }
 
-                binding!!.totalSearchResults.text = "Found +" + response.body()?.total.toString() + " results"
-                binding!!.totalSearchResults.paintFlags = binding!!.totalSearchResults.paintFlags or Paint.UNDERLINE_TEXT_FLAG
+                binding!!.totalSearchResults.text =
+                    "Found +" + response.body()?.total.toString() + " results"
+                binding!!.totalSearchResults.paintFlags =
+                    binding!!.totalSearchResults.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             } else {
                 // Response API Error
                 Log.e("responseError: ", response.errorBody().toString())
             }
-        })
+        }
     }
 }
